@@ -7,7 +7,7 @@
 Summary:	Disc burning application
 Name:		silicon
 Version:	2.0.0
-Release:	0.1
+Release:	0.3
 License:	GPL v3
 Group:		X11/Applications
 Source0:	http://getsilicon.org/download/%{name}_%{version}_source.tar.gz
@@ -19,6 +19,7 @@ BuildRequires:	cmake
 BuildRequires:	libstdc++-devel
 BuildRequires:	qt4-build
 BuildRequires:	taglib-devel
+Requires:	desktop-file-utils
 Requires:	dvd+rw-tools
 Requires:	mkisofs
 Requires:	mpg123
@@ -165,6 +166,9 @@ Silicon music player.
 Summary:	Silicon themes
 Group:		X11/Applications
 Requires:	%{name} = %{version}-%{release}
+%if "%{_rpmversion}" >= "5"
+BuildArch:	noarch
+%endif
 
 %description themes
 %{summary}
@@ -231,6 +235,12 @@ desktop-file-validate $RPM_BUILD_ROOT%{_desktopdir}/%{name}.desktop
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post
+%update_desktop_database
+
+%postun
+%update_desktop_database
+
 %files
 %defattr(644,root,root,755)
 %doc README Authors
@@ -240,6 +250,8 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libSiliconLib.so
 %{_desktopdir}/silicon.desktop
 %{_pixmapsdir}/%{name}.png
+%dir %{_libdir}/%{name}
+%dir %{_libdir}/%{name}/apps
 %dir %{_datadir}/%{name}
 %dir %{_datadir}/%{name}/languages
 %dir %{_datadir}/%{name}/themes
