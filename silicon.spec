@@ -110,7 +110,20 @@ Silicon themes.
 cd src
 install -d build
 cd build
-%cmake ..
+%cmake .. \
+	-DMPG123_FOUND=/usr/bin/mpg123 \
+	-DMPG321_FOUND=/usr/bin/mpg321 \
+	-DWODIM_FOUND=/usr/bin/wodim \
+	-DCDRECORD_FOUND=/usr/bin/cdrecord \
+	-DMKISOFS_FOUND=/usr/bin/mkisofs \
+	-DGENISOIMAGE_FOUND=/usr/bin/genisoimage \
+	-DREADCD_FOUND=/usr/bin/readcd \
+	-DREADOM_FOUND=/usr/bin/readom \
+	-DUDISKS_FOUND=/usr/bin/udisks \
+	-DFUSEISO_FOUND=/usr/bin/fuseiso \
+	-DDVD_FORMAT_FOUND=/usr/bin/dvd+rw-format \
+	-DPOLKIT_FOUND=/usr/bin/pkexec \
+
 %{__make}
 
 %install
