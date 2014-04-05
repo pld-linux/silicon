@@ -7,7 +7,7 @@
 Summary:	Disc burning application
 Name:		silicon
 Version:	2.0.0
-Release:	0.3
+Release:	0.4
 License:	GPL v3
 Group:		X11/Applications
 Source0:	http://getsilicon.org/download/%{name}_%{version}_source.tar.gz
@@ -252,6 +252,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_pixmapsdir}/%{name}.png
 %dir %{_libdir}/%{name}
 %dir %{_libdir}/%{name}/apps
+%dir %{_libdir}/%{name}/plugins
 %dir %{_datadir}/%{name}
 %dir %{_datadir}/%{name}/languages
 %dir %{_datadir}/%{name}/themes
