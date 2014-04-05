@@ -22,7 +22,7 @@ BuildRequires:	taglib-devel
 Requires:	desktop-file-utils
 Requires:	dvd+rw-tools
 Requires:	mkisofs
-Requires:	mpg123
+Suggests:	mpg123
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
