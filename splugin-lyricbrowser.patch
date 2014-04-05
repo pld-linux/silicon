@@ -1,0 +1,11 @@
+--- silicon-2.0.0/src/SPlugins/LyricBrowser/CMakeLists.txt.orig	2012-09-25 20:44:12.239000075 +0200
++++ silicon-2.0.0/src/SPlugins/LyricBrowser/CMakeLists.txt	2012-09-25 20:44:58.014000075 +0200
+@@ -33,7 +33,7 @@
+ QT4_WRAP_UI( LYRICBROWSER_UI_HEADERS ${LYRICBROWSER_UIS} )
+ 
+ add_library( LyricBrowser SHARED ${LYRICBROWSER_CPP} ${LYRICBROWSER_UI_HEADERS} ${LYRICBROWSER_RESOURCES_HEADERS} ${LYRICBROWSER_MOC_HEADERS} )
+-target_link_libraries( LyricBrowser ${QT_QTCORE_LIBRARY} ${QT_QTGUI_LIBRARY} SiliconLib tag phonon  )
++target_link_libraries( LyricBrowser ${QT_QTCORE_LIBRARY} ${QT_QTGUI_LIBRARY} ${QT_QTNETWORK_LIBRARY} SiliconLib tag phonon  )
+ 
+ install(TARGETS LyricBrowser  DESTINATION ${PLUGIN_INSTALL_PATH} )
+ 

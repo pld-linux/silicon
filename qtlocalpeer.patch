@@ -1,0 +1,10 @@
+--- silicon-2.0.0/src/Silicon/qtsingleapplication/qtlocalpeer.cpp.orig	2012-09-25 21:03:19.027000075 +0200
++++ silicon-2.0.0/src/Silicon/qtsingleapplication/qtlocalpeer.cpp	2012-09-25 21:03:58.894000074 +0200
+@@ -56,6 +56,7 @@
+ static PProcessIdToSessionId pProcessIdToSessionId = 0;
+ #endif
+ #if defined(Q_OS_UNIX)
++#include <unistd.h>
+ #include <time.h>
+ #endif
+ 
