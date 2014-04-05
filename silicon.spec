@@ -1,13 +1,7 @@
-# TODO
-# - unpackaged
-#        /usr/lib64/silicon/plugins/libCdRecord.so
-#        /usr/lib64/silicon/plugins/libFUseIso.so
-#        /usr/lib64/silicon/plugins/libMkDiscFs.so
-#        /usr/lib64/silicon/plugins/libMkIsoFs.so
 Summary:	Disc burning application
 Name:		silicon
 Version:	2.0.0
-Release:	0.4
+Release:	0.5
 License:	GPL v3
 Group:		X11/Applications
 Source0:	http://getsilicon.org/download/%{name}_%{version}_source.tar.gz
@@ -29,138 +23,62 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Silicon Empire is set of tools to Burn, Copy, Backup and Manage your
 optical discs like CDs, DVDs and Blu-Rays.
 
-%package audio-disc
-Summary:	Silicon audio disc
+%package apps
+Summary:	Apps for Silicon Empire
 Group:		X11/Applications
 Requires:	%{name} = %{version}-%{release}
+Obsoletes:	silicon-audio-disc
+Obsoletes:	silicon-converter
+Obsoletes:	silicon-copy-disc
+Obsoletes:	silicon-data-disc
+Obsoletes:	silicon-database
+Obsoletes:	silicon-disc-details
+Obsoletes:	silicon-disc-eraser
+Obsoletes:	silicon-disc-imaging
+Obsoletes:	silicon-disc-scanner
+Obsoletes:	silicon-image-burner
+Obsoletes:	silicon-library
+Obsoletes:	silicon-limoo
+Obsoletes:	silicon-mounter
+Obsoletes:	silicon-sample-app
+Obsoletes:	silicon-script-runner
+Obsoletes:	silicon-tagarg-player
 
-%description audio-disc
-Silicon application to create Audio discs:
-- CDs
-- DVDs
-- Blu-Rays
+%description apps
+Applications for Silicon Empire:
+- converter: convert your files to other supported formats.
+- copy-disc: copy a disc to another disc.
+- database: show information and indexed data that DiscScanner stored
+  into the Silicon DataBase.
+- data-disc: burn data discs or to create data images.
+- disc-details: show disc, image or database disc details.
+- disc-eraser: erase rw discs.
+- disc-imaging: create images of your discs.
+- disc-scanner: collect data from your discs to the Silicon DataBase.
+- image-burner: burn a images to discs.
+- library: manage your iso images in a classic way.
+- limoo: Limoo image viewer.
+- mounter: mount/umount images easily.
+- script-runner: script runner
+- tagarg-player: tagarg player
 
-%package converter
-Summary:	Silicon converter
+%package plugins
+Summary:	Plugins for Silicon Empire
 Group:		X11/Applications
 Requires:	%{name} = %{version}-%{release}
+Obsoletes:	silicon-plugin-lyric-browser
+Obsoletes:	silicon-plugin-now-playing
+Obsoletes:	silicon-plugin-single-inner-dialog
+Obsoletes:	silicon-plugin-system-tray
+Obsoletes:	silicon-plugin-tagarg-audio-disc
 
-%description converter
-Silicon application to convert your files to other supported formats.
-
-%package copy-disc
-Summary:	Silicon copy disc
-Group:		X11/Applications
-Requires:	%{name} = %{version}-%{release}
-
-%description copy-disc
-Silicon application to copy a disc to another disc.
-
-%package database
-Summary:	Silicon database
-Group:		X11/Applications
-Requires:	%{name} = %{version}-%{release}
-
-%description database
-Silicon application to show informations and indexed data that
-DiscScanner stored into the Silicon DataBase.
-
-%package data-disc
-Summary:	Silicon data disc
-Group:		X11/Applications
-Requires:	%{name} = %{version}-%{release}
-
-%description data-disc
-Silicon application to burn data discs or to create data images.
-
-%package disc-details
-Summary:	Silicon disc details
-Group:		X11/Applications
-Requires:	%{name} = %{version}-%{release}
-
-%description disc-details
-Silicon application to show disc, image or database disc details.
-
-%package disc-eraser
-Summary:	Silicon disc eraser
-Group:		X11/Applications
-Requires:	%{name} = %{version}-%{release}
-
-%description disc-eraser
-Silicon application to erase rw discs.
-
-%package disc-imaging
-Summary:	Silicon disc imaging
-Group:		X11/Applications
-Requires:	%{name} = %{version}-%{release}
-
-%description disc-imaging
-Silicon application to create images of your discs.
-
-%package disc-scanner
-Summary:	Silicon disc scanner
-Group:		X11/Applications
-Requires:	%{name} = %{version}-%{release}
-
-%description disc-scanner
-Silicon application to collect data from your discs to the Silicon
-DataBase.
-
-%package image-burner
-Summary:	Silicon app image burner
-Group:		X11/Applications
-Requires:	%{name} = %{version}-%{release}
-
-%description image-burner
-Silicon application to burn a images to discs.
-
-%package library
-Summary:	Silicon app library
-Group:		X11/Applications
-Requires:	%{name} = %{version}-%{release}
-
-%description library
-Silicon application to manage your iso images in a classic way.
-
-%package limoo
-Summary:	Silicon app limoo
-Group:		X11/Applications
-Requires:	%{name} = %{version}-%{release}
-
-%description limoo
-Silicon application - Limoo image viewer.
-
-%package mounter
-Summary:	Silicon app mounter
-Group:		X11/Applications
-Requires:	%{name} = %{version}-%{release}
-
-%description mounter
-Silicon application to mount/umount images easily.
-
-%package sample-app
-Summary:	Silicon sample app
-Group:		X11/Applications
-Requires:	%{name} = %{version}-%{release}
-
-%description sample-app
-Silicon sample application
-
-%package script-runner
-Summary:	Silicon app script runner
-Group:		X11/Applications
-Requires:	%{name} = %{version}-%{release}
-
-%description script-runner
-%{summary}
-
-%package tagarg-player
-Summary:	Silicon app tagarg player
-Group:		X11/Applications
-Requires:	%{name} = %{version}-%{release}
-
-%description tagarg-player
-Silicon music player.
+%description plugins
+Plugins for Silicon Empire Application:
+- lyric-browser: lyric browser plugin
+- now-playing: now playing plugin
+- single-inner-dialog: single inner dialog plugin
+- system-tray: system tray plugin
+- tagarg-audio-disc: tagarg audio disc plugin
 
 %package themes
 Summary:	Silicon themes
@@ -171,47 +89,7 @@ BuildArch:	noarch
 %endif
 
 %description themes
-%{summary}
-
-%package plugin-lyric-browser
-Summary:	Silicon lyric browser plugin
-Group:		X11/Applications
-Requires:	%{name} = %{version}-%{release}
-
-%description plugin-lyric-browser
-%{summary}
-
-%package plugin-now-playing
-Summary:	Silicon now playing plugin
-Group:		X11/Applications
-Requires:	%{name} = %{version}-%{release}
-
-%description plugin-now-playing
-%{summary}
-
-%package plugin-single-inner-dialog
-Summary:	Silicon single inner dialog plugin
-Group:		X11/Applications
-Requires:	%{name} = %{version}-%{release}
-
-%description plugin-single-inner-dialog
-%{summary}
-
-%package plugin-system-tray
-Summary:	Silicon system tray plugin
-Group:		X11/Applications
-Requires:	%{name} = %{version}-%{release}
-
-%description plugin-system-tray
-%{summary}
-
-%package plugin-tagarg-audio-disc
-Summary:	Silicon tagarg audio disc plugin
-Group:		X11/Applications
-Requires:	%{name} = %{version}-%{release}
-
-%description plugin-tagarg-audio-disc
-%{summary}
+Silicon themes.
 
 %prep
 %setup -q -n %{name}-empire
@@ -262,90 +140,37 @@ rm -rf $RPM_BUILD_ROOT
 %lang(fa) %{_datadir}/%{name}/languages/lang-fa.qm
 %lang(zh_TW) %{_datadir}/%{name}/languages/lang-zh_TW.qm
 
-%files audio-disc
+%files apps
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/%{name}/apps/libAudioDisc.so
-
-%files converter
-%defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/%{name}/apps/libConverter.so
-
-%files copy-disc
-%defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/%{name}/apps/libCopyDisc.so
-
-%files database
-%defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/%{name}/apps/libDataBase.so
-
-%files data-disc
-%defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/%{name}/apps/libDataDisc.so
-
-%files disc-details
-%defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/%{name}/apps/libDiscDetails.so
-
-%files disc-eraser
-%defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/%{name}/apps/libDiscEraser.so
-
-%files disc-imaging
-%defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/%{name}/apps/libDiscImaging.so
-
-%files disc-scanner
-%defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/%{name}/apps/libDiscScanner.so
-
-%files image-burner
-%defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/%{name}/apps/libImageBurner.so
-
-%files library
-%defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/%{name}/apps/libLibrary.so
-
-%files limoo
-%defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/%{name}/apps/libLimoo.so
-
-%files mounter
-%defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/%{name}/apps/libMounter.so
-
-%files sample-app
-%defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/%{name}/apps/libSampleApp.so
-
-%files script-runner
-%defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/%{name}/apps/libScriptRunner.so
-
-%files tagarg-player
-%defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/%{name}/apps/libTagargPlayer.so
+
+%files plugins
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/%{name}/plugins/libCdRecord.so
+%attr(755,root,root) %{_libdir}/%{name}/plugins/libFUseIso.so
+%attr(755,root,root) %{_libdir}/%{name}/plugins/libLyricBrowser.so
+%attr(755,root,root) %{_libdir}/%{name}/plugins/libMkDiscFs.so
+%attr(755,root,root) %{_libdir}/%{name}/plugins/libMkIsoFs.so
+%attr(755,root,root) %{_libdir}/%{name}/plugins/libNowPlaying.so
+%attr(755,root,root) %{_libdir}/%{name}/plugins/libSingleInnerDialog*.so
+%attr(755,root,root) %{_libdir}/%{name}/plugins/libSystemTray.so
+%attr(755,root,root) %{_libdir}/%{name}/plugins/libTagargAudioDisc.so
 
 %files themes
 %defattr(644,root,root,755)
 %{_datadir}/%{name}/themes/*
-
-%files plugin-lyric-browser
-%defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/%{name}/plugins/libLyricBrowser.so
-
-%files plugin-now-playing
-%defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/%{name}/plugins/libNowPlaying.so
-
-%files plugin-single-inner-dialog
-%defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/%{name}/plugins/libSingleInnerDialog*.so
-
-%files plugin-system-tray
-%defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/%{name}/plugins/libSystemTray.so
-
-%files plugin-tagarg-audio-disc
-%defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/%{name}/plugins/libTagargAudioDisc.so
