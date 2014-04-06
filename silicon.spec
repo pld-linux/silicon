@@ -1,7 +1,7 @@
 Summary:	Disc burning application
 Name:		silicon
 Version:	2.0.0
-Release:	0.5
+Release:	0.6
 License:	GPL v3
 Group:		X11/Applications
 Source0:	http://getsilicon.org/download/%{name}_%{version}_source.tar.gz
@@ -184,13 +184,19 @@ rm -rf $RPM_BUILD_ROOT
 
 %files plugins
 %defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/%{name}/plugins/libAudioCdRecord.so
 %attr(755,root,root) %{_libdir}/%{name}/plugins/libCdRecord.so
+%attr(755,root,root) %{_libdir}/%{name}/plugins/libEraser.so
 %attr(755,root,root) %{_libdir}/%{name}/plugins/libFUseIso.so
 %attr(755,root,root) %{_libdir}/%{name}/plugins/libLyricBrowser.so
 %attr(755,root,root) %{_libdir}/%{name}/plugins/libMkDiscFs.so
 %attr(755,root,root) %{_libdir}/%{name}/plugins/libMkIsoFs.so
 %attr(755,root,root) %{_libdir}/%{name}/plugins/libNowPlaying.so
+%attr(755,root,root) %{_libdir}/%{name}/plugins/libReadCd.so
 %attr(755,root,root) %{_libdir}/%{name}/plugins/libSingleInnerDialog*.so
+%attr(755,root,root) %{_libdir}/%{name}/plugins/libUDisks.so
+%attr(755,root,root) %{_libdir}/%{name}/plugins/libmpg123.so
+%attr(755,root,root) %{_libdir}/%{name}/plugins/libmpg321.so
 %attr(755,root,root) %{_libdir}/%{name}/plugins/libSystemTray.so
 %attr(755,root,root) %{_libdir}/%{name}/plugins/libTagargAudioDisc.so
 
