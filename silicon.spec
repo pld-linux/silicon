@@ -94,9 +94,7 @@ Plugins for Silicon Empire Application:
 Summary:	Silicon themes
 Group:		X11/Applications
 Requires:	%{name} = %{version}-%{release}
-%if "%{_rpmversion}" >= "5"
 BuildArch:	noarch
-%endif
 
 %description themes
 Silicon themes.
